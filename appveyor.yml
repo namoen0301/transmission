@@ -32,11 +32,11 @@ for:
   clone_folder: '%SystemDrive%\%TR_ARCH%-project'
 
   cache:
-  #- '%SystemDrive%\%TR_ARCH%-ccache'
+  - '%SystemDrive%\%TR_ARCH%-ccache'
 
   init:
   - pwsh: |
-      $Env:APPVEYOR_SAVE_CACHE_ON_ERROR = 'true'
+      $Env:APPVEYOR_SAVE_CACHE_ON_ERROR = 'false'
 
   install:
   - pwsh: |
