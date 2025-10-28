@@ -13,7 +13,7 @@ environment:
     TR_ARCH: arm64
     QT_VERSION: '6'
   - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2022
-    TR_ARCH: x64
+    TR_ARCH: amd64_arm64
     QT_VERSION: '6'
 
 
