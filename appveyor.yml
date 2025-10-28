@@ -59,9 +59,19 @@ for:
       choco install jom
       choco install wixtoolset --version 3.14.0
       choco install ccache --version 4.8.3
+      
+      function Get-Tree($Path, $Include='*') {
+          @(Get-Item $Path -Include $Include -Force) +
+              (Get-ChildItem $Path -Recurse -Include $Include -Force) |
+              Sort-Object pspath -Descending -unique
+      }
+      
+      function Remove-Tree($Path, $Include='*') {
+          Get-Tree $Path $Include | Remove-Item -force -recurse
+      }
 
-      Remove-Item -Recurse -Force "$Env:SystemDrive\OpenSSL-Win32"
-      Remove-Item -Recurse -Force "$Env:SystemDrive\OpenSSL-Win64"
+      Remove-Tree "$Env:SystemDrive\OpenSSL-Win32"
+      Remove-Tree "$Env:SystemDrive\OpenSSL-Win64"
 
 
       Install-Module -Name SignPath
