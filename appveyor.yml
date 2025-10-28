@@ -21,6 +21,7 @@ branches:
   only:
   - main
   - /^\d+\.\d+.*/
+  - appveyor-test
 
 for:
 -
