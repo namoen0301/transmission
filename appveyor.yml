@@ -60,8 +60,9 @@ for:
       choco install wixtoolset --version 3.14.0
       choco install ccache --version 4.8.3
 
-      Remove-Item -Path (Join-Path $Env:SystemDrive OpenSSL-Win32) -Recurse -Force
-      Remove-Item -Path (Join-Path $Env:SystemDrive OpenSSL-Win64) -Recurse -Force
+      Remove-Item -Recurse -Force "$Env:SystemDrive\OpenSSL-Win32"
+      Remove-Item -Recurse -Force "$Env:SystemDrive\OpenSSL-Win64"
+
 
       Install-Module -Name SignPath
 
