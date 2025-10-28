@@ -32,7 +32,7 @@ for:
   clone_folder: '%SystemDrive%\%TR_ARCH%-project'
 
   cache:
-  - '%SystemDrive%\%TR_ARCH%-ccache'
+  #- '%SystemDrive%\%TR_ARCH%-ccache'
 
   init:
   - pwsh: |
